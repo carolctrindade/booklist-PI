@@ -1,0 +1,75 @@
+{% extends "base.html" %} {% block title %}Add a Book{% endblock %} {% block content %}
+    <h1 align="center">Add a Book</h1>
+    
+    <form method="POST">
+        <div class="form-group">
+            <label for="book">Book name</label>
+            <input
+              type="text"
+              id="book"
+              name="book"
+              class="form-control"
+            />
+            <label for="author">Author</label>
+            <input
+              type="text"
+              id="author"
+              name="author"
+              class="form-control"
+            />
+            <label for="genre">Genre</label>
+            <input
+              type="text"
+              id="genre"
+              name="genre"
+              class="form-control"
+            />
+            <label for="editor">Editor</label>
+            <input
+              type="text"
+              id="editor"
+              name="editor"
+              class="form-control"
+            />
+            <label for="releasedate">Release date</label>
+            <input
+              type="text"
+              id="releasedate"
+              name="releasedate"
+              class="form-control"
+            />
+            <label for="status">Read status</label>
+            <input
+              type="text"
+              id="status"
+              name="status"
+              class="form-control"
+            />
+            <label for="yearread">Year of reading</label>
+            <input
+              type="text"
+              id="yearread"
+              name="yearread"
+              class="form-control"
+            />
+            <label for="comments">Comments</label>
+            <input
+              type="text"
+              id="comments"
+              name="comments"
+              class="form-control"
+            />
+
+      <br />
+      <div align="center">
+        <button type="submit" class="btn btn-lg btn-primary">Add</button>
+      </div>
+    </form>
+
+    <br />
+    <div align="center">
+        <a href="/home">
+            <button type="button" class="btn btn-lg btn-secondary">Back</button>
+        </a>
+    </div>
+    {% endblock %}

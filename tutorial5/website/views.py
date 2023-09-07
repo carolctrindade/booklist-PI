@@ -13,6 +13,21 @@ def home():
     posts = Post.query.all()
     return render_template("home.html", user=current_user, posts=posts)
 
+@views.route("/add-book", methods=['GET', 'POST'])
+@login_required
+def add_book():
+    book = request.form.get("book")
+    author = request.form.get("author")
+    genre = request.form.get("genre")
+    editor = request.form.get("editor")
+    releasedate = request.form.get("releasedate")
+    status = request.form.get("status")
+    yearread = request.form.get("yearread")
+    comments = request.form.get("comments")
+    
+    return render_template('add_book.html', user=current_user)
+
+
 
 @views.route("/create-post", methods=['GET', 'POST'])
 @login_required
