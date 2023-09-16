@@ -9,7 +9,9 @@ O projeto desenvolvido trata-se de......
 - SQL
 
 ## Pré-requisitos
-
+- flask
+- Flask-SQLAlchemy
+- flask-login
 
 
 ## Como usar

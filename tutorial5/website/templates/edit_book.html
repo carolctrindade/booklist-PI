@@ -1,5 +1,5 @@
-{% extends "base.html" %} {% block title %}Add a Book{% endblock %} {% block content %}
-    <h1 align="center">Add a Book</h1>
+{% extends "base.html" %} {% block title %}Edit Book{% endblock %} {% block content %}
+    <h1 align="center">Edit Book</h1>
     
     <form method="POST">
         <div class="form-group">
@@ -14,7 +14,7 @@
             <input
               type="text"
               id="author"
-              name="author"
+              name="book_author"
               class="form-control"
             />
             <label for="status">Status</label>
@@ -24,10 +24,9 @@
               <option value="Dropped">Dropped</option>
               <option value="Finished Reading">Finished Reading</option>
             </select>
-            
       <br />
       <div align="center">
-        <button type="submit" class="btn btn-lg btn-primary">Add</button>
+        <button type="submit" class="btn btn-lg btn-primary">Edit</button>
       </div>
     </form>
 
