@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+    %}
+    <h1 align="center">{% block header %}My Books{% endblock %}</h1>
+    <div id="books">
+      {% for book in books %}
+        {% if user.id == book.author %}
+        <div class="card border-dark">
+            <div class="card-header d-flex justify-content-between align-items-center">
+            <h3> Title: {{ book.book }} </h3>
+            <div>
+                <div class="btn-group">
+                <button
+                    type="button"
+                    class="btn btn-sm btn-primary dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                ></button>
+                <ul class="dropdown-menu">
+                    <li>
+                    <a href="/edit-book/{{book.id}}" class="dropdown-item">Edit</a>
+                    </li>
+                    <li>
+                    <a href="/delete-book/{{book.id}}" class="dropdown-item">Delete</a>
+                    </li>
+                </ul>
+                </div>              
+            </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text ">Author: {{book.book_author}}</div>
+                <br />
+                <div class="card-text">Status: {{book.status}}</div>
+                <br />
+            </div>
+        </div>
+    </br>
+        {% endif %}
+    {% endfor %}
+    {% block footer %}
+</br>
+    <div align="center">
+      <a href="/add-book"
+        ><button type="button" class="btn btn-primary btn-lg">
+          Add a book
+        </button></a
+      >
+    </div>
+    {% endblock %}{% endblock %}
