@@ -20,12 +20,13 @@ def add_book():
         book = request.form.get("book")
         book_author = request.form.get("author")
         status = request.form.get("status")
+        comment = request.form.get("comment")
 
         if len(book) < 3:
             flash('Book name must be at least 4 characters long', category='error')
         else:
             new_book = Book(book=book, book_author=book_author, status=status,
-                             author=current_user.id)
+                             author=current_user.id, comment=comment)
             db.session.add(new_book)
             db.session.commit()
             flash('Book added!', category='success')
@@ -41,17 +42,24 @@ def edit_book(id):
     if not book:
         flash("Book does not exist.", category='error')
         return redirect(url_for('views.home'))
+    
     if current_user.id != book.author:
         flash('You do not have permission to edit this book.', category='error')
         return redirect(url_for('views.home'))
+    
     if request.method == 'POST':
         new_book = request.form.get('book')
         new_author = request.form.get('book_author')
         new_status = request.form.get('status')
+        new_comment = request.form.get('comment')
 
-        book.book = new_book
-        book.book_author = new_author
-        book.status = new_status
+        if new_book:
+            book.book = new_book
+        if new_author:
+            book.book_author = new_author
+        if new_status:
+            book.status = new_status
+        book.comment = new_comment
 
         db.session.commit()
         flash('Book information updated successfully', category='success')

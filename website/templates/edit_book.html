@@ -9,6 +9,7 @@
               id="book"
               name="book"
               class="form-control"
+              value="{{ book.book }}"
             />
             <label for="author">Author</label>
             <input
@@ -16,14 +17,23 @@
               id="author"
               name="book_author"
               class="form-control"
+              value="{{ book.book_author }}"
             />
             <label for="status">Status</label>
             <select id="status" name="status" class="form-control">
-              <option value="Not Read">Not Read</option>
-              <option value="Currently Reading">Currently Reading</option>
-              <option value="Dropped">Dropped</option>
-              <option value="Finished Reading">Finished Reading</option>
+              <option value="Not Read" {% if book.status == 'Not Read' %} selected {% endif %}>Not Read</option>
+              <option value="Currently Reading" {% if book.status == 'Currently Reading' %} selected {% endif %}>Currently Reading</option>
+              <option value="Dropped" {% if book.status == 'Dropped' %} selected {% endif %}>Dropped</option>
+              <option value="Finished Reading" {% if book.status == 'Finished Reading' %} selected {% endif %}>Finished Reading</option>
             </select>
+            <label for="comment">Comment</label>
+            <input
+              type="text"
+              id="comment"
+              name="comment"
+              class="form-control"
+              value="{{ book.comment }}"
+            />
       <br />
       <div align="center">
         <button type="submit" class="btn btn-lg btn-primary">Edit</button>

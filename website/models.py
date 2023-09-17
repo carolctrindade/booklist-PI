@@ -17,4 +17,5 @@ class Book(db.Model):
     book_author = db.Column(db.String(50))
     status = db.Column(db.String(50))
     author = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"), nullable=False)
+    comment = db.Column(db.String(200), nullable=False)
 
