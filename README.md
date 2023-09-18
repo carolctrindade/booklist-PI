@@ -1,6 +1,6 @@
 # Projeto Integrador: Análise de Soluções Integradas para Organizações
 
-O projeto desenvolvido trata-se de uma aplicação web que permita aos usuários registrar e gerenciar a leitura de seus livros.
+O projeto desenvolvido trata-se de uma aplicação web que funciona como uma lista online que permita aos usuários registrar e gerenciar a leitura de seus livros.
 
 ## Tecnologias
 - HTML
@@ -11,7 +11,7 @@ O projeto desenvolvido trata-se de uma aplicação web que permita aos usuários
 - MySQL (sqlite3)
 
 ## Pré-requisitos
-Instalar as seguintes libs via pip:
+Instalar os seguintes pacotes/libs via pip:
 - flask
 - Flask-SQLAlchemy
 - flask-login
